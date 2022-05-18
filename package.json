@@ -1,0 +1,13 @@
+{
+  "name": "speed-reader",
+  "version": "1.0.0",
+  "description": "Speed read long long content at the best.",
+  "main": "src/index.js",
+  "repository": {
+    "url": "https://github.com/bhavik2936/speed-reader",
+    "type": "git"
+  },
+  "author": "Bhavik Parmar",
+  "license": "MIT",
+  "private": false
+}
