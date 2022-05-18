@@ -9,5 +9,17 @@
   },
   "author": "Bhavik Parmar",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "webpack-dev-server": "^4.9.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.12",
+    "@babel/preset-env": "^7.17.12",
+    "@babel/preset-react": "^7.17.12",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
 }
