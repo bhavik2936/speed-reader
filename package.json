@@ -10,6 +10,11 @@
   "author": "Bhavik Parmar",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "webpack serve --color --config webpack.config.js",
+    "test": "echo \"Error: No test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
   "devDependencies": {
     "html-webpack-plugin": "^5.5.0",
     "webpack-dev-server": "^4.9.0"
