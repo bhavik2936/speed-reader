@@ -1,0 +1,8 @@
+# Ignore heaviest things on the earth
+node_modules
+
+# Ignore production code
+dist
+
+# Ignore logs
+*.log*

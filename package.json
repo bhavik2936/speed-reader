@@ -1,0 +1,32 @@
+{
+  "name": "speed-reader",
+  "version": "0.0.1",
+  "description": "Speed read long long content at the best.",
+  "main": "src/index.js",
+  "repository": {
+    "url": "https://github.com/bhavik2936/speed-reader",
+    "type": "git"
+  },
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "webpack serve --color --config webpack.config.js",
+    "test": "echo \"Error: No test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack-dev-server": "^4.9.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.12",
+    "@babel/preset-env": "^7.17.12",
+    "@babel/preset-react": "^7.17.12",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
+}
