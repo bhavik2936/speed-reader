@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "html-webpack-plugin": "^5.5.0",
-    "webpack-dev-server": "^4.9.0"
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "@babel/core": "^7.17.12",
