@@ -2,6 +2,7 @@ const App = () => {
   return(
     <>
       <h1>Speed Reader</h1>
+      
     </>
   );
 };
