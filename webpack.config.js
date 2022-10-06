@@ -11,7 +11,7 @@ const config = {
 
   module: {
     rules: [
-      // ES6 and JSX rule
+      // ES6
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
