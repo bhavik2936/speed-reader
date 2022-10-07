@@ -11,9 +11,9 @@ const config = {
 
   module: {
     rules: [
-      // ES6 and JSX rule
+      // ES6
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
       },
@@ -52,7 +52,7 @@ const config = {
   // Allows us to import modules without needing to add their extensions
   resolve: {
     modules: ['src', 'node_modules'],
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js']
   },
 
   output: {
