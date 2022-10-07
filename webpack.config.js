@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const {DefinePlugin}=require('webpack');
+const dotenv=require('dotenv')
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -47,6 +49,10 @@ const config = {
     new webpack.ProvidePlugin({
       React: 'react',
     }),
+    //allow users to use dotenv
+    new DefinePlugin({
+      'process.env': JSON.stringify(dotenv.config().parsed)
+    })
   ],
 
   // Allows us to import modules without needing to add their extensions
