@@ -1,5 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
+const dotenv = require('dotenv').config({
+  path: path.join(__dirname, '.env')
+});
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -46,6 +49,11 @@ const config = {
     // Allows libraries to be used without requiring an `import` or `require()` call.
     new webpack.ProvidePlugin({
       React: 'react',
+    }),
+
+    // Allows to use environment variables.
+    new webpack.DefinePlugin({
+      'process.env': dotenv.parsed
     }),
   ],
 
