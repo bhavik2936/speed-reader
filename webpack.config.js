@@ -1,12 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
+const dotenv = require('dotenv');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 
 const config = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   mode: isProd ? 'production' : 'development',
 
   module: {
@@ -15,7 +16,7 @@ const config = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
 
       // CSS rule
@@ -28,12 +29,12 @@ const config = {
             options: {
               modules: true,
               localConvention: true,
-              sourceMap: true
-            }
-          }
-        ]
-      }
-    ]
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+    ],
   },
 
   plugins: [
@@ -47,12 +48,17 @@ const config = {
     new webpack.ProvidePlugin({
       React: 'react',
     }),
+
+    // Load environment variables defined in .env file to 'process.env'
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(dotenv.config().parsed),
+    }),
   ],
 
   // Allows us to import modules without needing to add their extensions
   resolve: {
     modules: ['src', 'node_modules'],
-    extensions: ['*', '.js']
+    extensions: ['*', '.js'],
   },
 
   output: {
@@ -73,7 +79,7 @@ const config = {
         styles: {
           name: 'styles',
           test: /\.css$/,
-          chunks: 'all'
+          chunks: 'all',
         },
 
         // Create vendor chunk for node_modules
@@ -81,12 +87,12 @@ const config = {
           name: 'node_vendors',
           test: /[\\/]node_modules[\\/]/,
           chunks: 'all',
-          reuseExistingChunk: true
-        }
-      }
-    }
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
-}
+};
 
 if (isDev) {
   const host = 'localhost';
