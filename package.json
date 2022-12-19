@@ -11,6 +11,12 @@
   "private": false,
   "scripts": {
     "start": "webpack serve --color --config webpack.config.js",
+    "format": "yarn prettier && yarn lint:fix",
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix",
+    "lint:debug": "yarn lint --debug",
+    "prettier": "prettier --loglevel warn --write '**/*.js'",
+    "prettier:check": "prettier --check '**/*.js'",
     "test": "echo \"Error: No test specified\" && exit 1",
     "build": "webpack --config webpack.config.js"
   },
