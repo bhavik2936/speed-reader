@@ -1,7 +1,7 @@
 If the PR tries to resolve any Open Issue, make sure to include the text.
 **The PR tries to resolve #<ISSUE-NUMBER>.**
 
-# What
+## What
 Add a description about proposed changes addressed into the PR.
 
 ## Why
