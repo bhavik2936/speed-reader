@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# All Git hooks are ordinary scripts that Git executes when certain events occur in the repository.
+# Since hooks resides in the `.git/hooks` directory and they are not checked into source control,
+# maintaining hooks can be a bit tricky. To share the same hooks across the entire team, we store
+# our Git hook files in `.githooks` and copy them into the `.git/hooks` directory during the
+# post-install portion of `yarn install`.
+
+# Create hooks directory if it doesn't exist
+mkdir -p ./.git/hooks
+
+# Install pre-commit hook
+cp -p ./.githooks/pre-commit ./.git/hooks/pre-commit

@@ -18,12 +18,21 @@
     "prettier": "prettier --loglevel warn --write '**/*.js'",
     "prettier:check": "prettier --check '**/*.js'",
     "test": "echo \"Error: No test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "postinstall": "./script/install_git_hooks",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "devDependencies": {
     "eslint": "^8.25.0",
     "eslint-plugin-react": "^7.31.10",
     "html-webpack-plugin": "^5.5.0",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.7.1",
     "webpack-dev-server": "^4.11.1"
   },
