@@ -1,9 +1,5 @@
-const Speeder = ({ isReading, para }) => {
-  return (
-    <div>
-      { isReading && para }
-    </div>
-  );
+const Speeder = ({ paragraph }) => {
+  return <div>{paragraph}</div>;
 };
 
 export default Speeder;
