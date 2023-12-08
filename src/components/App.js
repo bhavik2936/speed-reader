@@ -1,26 +1,24 @@
 import { useState } from 'react';
 
-import Typer from './Typer';
 import Speeder from './Speeder';
+import Typer from './Typer';
+
+import { PARAGRAPH_TEXT } from '../constants';
 
 const App = () => {
-  const [paragraph, setParagraph] = useState(process.env.PARA);
+  const [paragraph, setParagraph] = useState(PARAGRAPH_TEXT);
   const [isReading, setIsReading] = useState(false);
-
-  const storeParagraph = (paragraph) => {
-    setParagraph(paragraph);
-
-    setIsReading(true);
-  };
 
   return (
     <>
-      <Typer
-        isReading={isReading}
-        para={paragraph}
-        setParaState={storeParagraph}
-      />
-      <Speeder isReading={isReading} para={paragraph} />
+      {!isReading && (
+        <Typer
+          paragraph={paragraph}
+          setParagraph={setParagraph}
+          startReading={() => setIsReading(true)}
+        />
+      )}
+      {isReading && <Speeder paragraph={paragraph} />}
     </>
   );
 };
