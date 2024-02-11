@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Speeder from './Speeder';
+import Reader from './Reader';
 import Typer from './Typer';
 
 import { PARAGRAPH_TEXT } from '../constants';
@@ -18,7 +18,7 @@ const App = () => {
           startReading={() => setIsReading(true)}
         />
       )}
-      {isReading && <Speeder paragraph={paragraph} />}
+      {isReading && <Reader paragraph={paragraph} />}
     </>
   );
 };
