@@ -1,15 +1,14 @@
 import { useState } from 'react';
 
 import { PARAGRAPH_TEXT } from '../constants';
-import { splitWords } from '../utils';
 
-const Typer = ({ setWords, startReading }) => {
+const Typer = ({ computeWordsFromParagraph, startReading }) => {
   const [paragraph, setParagraph] = useState(PARAGRAPH_TEXT);
 
   const handleSubmit = (event) => {
     // Prevents the form from submitting
     event.preventDefault();
-    setWords(splitWords(paragraph));
+    computeWordsFromParagraph(paragraph);
     startReading();
   };
 
