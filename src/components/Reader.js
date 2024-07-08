@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { SPEED } from '../constants';
 import { calculateInterval } from '../utils';
 
-const Reader = ({ finishReading, words, setWords }) => {
+const Reader = ({ words, setWords }) => {
   // Calculate interval speed based on pre-defined WPM
   const timeInterval = calculateInterval(SPEED);
 
@@ -16,7 +16,6 @@ const Reader = ({ finishReading, words, setWords }) => {
 
     return () => {
       clearInterval(timer);
-      finishReading();
     };
   }, []);
 

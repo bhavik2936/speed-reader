@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Reader from './Reader';
 import Typer from './Typer';
@@ -12,22 +12,20 @@ const App = () => {
     setWords(splitWords(paragraph));
   };
 
-  return (
-    <>
-      {!isReading && (
-        <Typer
-          computeWordsFromParagraph={computeWordsFromParagraph}
-          startReading={() => setIsReading(true)}
-        />
-      )}
-      {isReading && words.length && (
-        <Reader
-          words={words}
-          setWords={setWords}
-          finishReading={() => setIsReading(false)}
-        />
-      )}
-    </>
+  useEffect(() => {
+    // Finish reading when no words are left to display
+    if (words.length == 0) {
+      setIsReading(false);
+    }
+  }, [words]);
+
+  return isReading ? (
+    <Reader words={words} setWords={setWords} />
+  ) : (
+    <Typer
+      computeWordsFromParagraph={computeWordsFromParagraph}
+      startReading={() => setIsReading(true)}
+    />
   );
 };
 
