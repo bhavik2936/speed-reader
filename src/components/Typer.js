@@ -1,10 +1,9 @@
-import { useState } from 'react';
-
-import { PARAGRAPH_TEXT } from '../constants';
-
-const Typer = ({ computeWordsFromParagraph, startReading }) => {
-  const [paragraph, setParagraph] = useState(PARAGRAPH_TEXT);
-
+const Typer = ({
+  paragraph,
+  setParagraph,
+  computeWordsFromParagraph,
+  startReading,
+}) => {
   const handleSubmit = (event) => {
     // Prevents the form from submitting
     event.preventDefault();

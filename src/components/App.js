@@ -2,9 +2,12 @@ import { useEffect, useState } from 'react';
 
 import Reader from './Reader';
 import Typer from './Typer';
+
+import { PARAGRAPH_TEXT } from '../constants';
 import { splitWords } from '../utils';
 
 const App = () => {
+  const [paragraph, setParagraph] = useState(PARAGRAPH_TEXT);
   const [words, setWords] = useState([]);
   const [isReading, setIsReading] = useState(false);
 
@@ -23,6 +26,8 @@ const App = () => {
     <Reader words={words} setWords={setWords} />
   ) : (
     <Typer
+      paragraph={paragraph}
+      setParagraph={setParagraph}
       computeWordsFromParagraph={computeWordsFromParagraph}
       startReading={() => setIsReading(true)}
     />
