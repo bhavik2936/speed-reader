@@ -59,6 +59,12 @@ const config = {
   resolve: {
     modules: ['src', 'node_modules'],
     extensions: ['.*', '.js'],
+    alias: {
+      '@': path.resolve(__dirname, 'src/'),
+      '@Components': path.resolve(__dirname, 'src/components'),
+      '@Constants': path.resolve(__dirname, 'src/constants'),
+      '@Utilities': path.resolve(__dirname, 'src/utils'),
+    },
   },
 
   output: {
