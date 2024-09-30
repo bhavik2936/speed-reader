@@ -58,7 +58,7 @@ const config = {
   // Allows us to import modules without needing to add their extensions
   resolve: {
     modules: ['src', 'node_modules'],
-    extensions: ['*', '.js'],
+    extensions: ['.*', '.js'],
   },
 
   output: {
