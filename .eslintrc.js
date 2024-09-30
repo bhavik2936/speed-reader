@@ -52,6 +52,8 @@ module.exports = {
     // Supress errors for missing React import
     'react/react-in-jsx-scope': 'off',
 
+    'react/prop-types': 'off',
+
     // Use semicolons
     semi: ['error', 'always'],
 
